@@ -55,15 +55,11 @@ a.card:hover, a.card:focus {
 .card .meta p.h4 {
   text-transform: capitalize; margin: 0 0 40px 0;
 }
-
 .card .stat {
   margin: 0 0 40px 0; position: relative;
 }
 .card .stat p.b {
   position: relative; margin: 0;
-}
-.card .stat:after {
-  content: ''; width: 75%; padding-bottom: 75%; display: block; position: absolute; top: 50%; left: 50%; z-index: -1; background: #e7e7e7; border-radius: 50%; opacity: 0.4; -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);
 }
 
 .card.fire .circle {
@@ -112,6 +108,9 @@ a.card:hover, a.card:focus {
 .filters .grid {
   padding-top: 20px; padding-bottom: 20px;
 }
+.filters .options {
+  float: left;
+}
 .filters .option {
   float: left; margin: 0 40px 0 0;
 }
@@ -126,3 +125,45 @@ a.card:hover, a.card:focus {
 }
 
 
+/****************************************
+  ==== MEDIA QUERIES
+****************************************/
+
+@media only screen and (max-width: 1024px){
+
+  .filters .options {
+    width: 70%;
+  }
+  .filters .option {
+    width: 100%; margin: 0;
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+
+  .filters .options {
+    width: 100%; margin: 0 0 20px 0;
+  }
+  .filters .submit {
+    width: 100%;
+  }
+  .filters .submit .btn {
+    width: 100%;
+  }
+  .card .stat {
+    width: 33.333334%; margin: 0 0 40px 0;
+  }
+
+}
+
+@media only screen and (max-width: 480px){
+
+  .filters .option label, .filters .option legend {
+    width: 100%; margin: 0 0 5px 0;
+  }
+  .filters .option {
+    margin: 0 0 10px 0;
+  }
+
+}

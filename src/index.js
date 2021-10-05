@@ -50,7 +50,7 @@ class SinglePokemon extends React.Component {
       const type = pokemon.types[0]['type']['name'];
 
       return(
-        <div key = {this.props.i} className="g3">
+        <div key = {this.props.i} className="g3 fc">
           <a href="#" className={'card ' + type}>
             <div className="image">
               <div className="circle"></div>
@@ -130,34 +130,36 @@ class AllPokemons extends React.Component {
                   </div>
                 </div>
                 <div className="g12">
-                  <div className="option count">
-                    <fieldset>
-                      <legend>Pokemons per page:</legend>
-                      <div className="radio">
-                        <input id="form-count10" type="radio" name="formPageCount" value="10" defaultChecked />
-                        <label htmlFor="form-count10">10</label>
+                  <div className="options">
+                    <div className="option count">
+                      <fieldset>
+                        <legend>Pokemons per page:</legend>
+                        <div className="radio">
+                          <input id="form-count10" type="radio" name="formPageCount" value="10" defaultChecked />
+                          <label htmlFor="form-count10">10</label>
+                        </div>
+                        <div className="radio">
+                          <input id="form-count20" type="radio" name="formPageCount" value="20" />              
+                          <label htmlFor="form-count20">20</label>
+                        </div>
+                        <div className="radio">
+                          <input id="form-count50" type="radio" name="formPageCount" value="50" />
+                          <label htmlFor="form-count50">50</label>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div className="option order">
+                      <label htmlFor="form-sort">Sort by:</label>
+                      <div className="select simple">
+                        <select id="form-sort">
+                          <option>Name ascending</option>
+                          <option>Name desending</option>
+                          <option>Height ascending</option>
+                          <option>Height desending</option>
+                          <option>Weight ascending</option>
+                          <option>Weight desending</option>
+                        </select>
                       </div>
-                      <div className="radio">
-                        <input id="form-count20" type="radio" name="formPageCount" value="20" />              
-                        <label htmlFor="form-count20">20</label>
-                      </div>
-                      <div className="radio">
-                        <input id="form-count50" type="radio" name="formPageCount" value="50" />
-                        <label htmlFor="form-count50">50</label>
-                      </div>
-                    </fieldset>
-                  </div>
-                  <div className="option order">
-                    <label htmlFor="form-sort">Sort by:</label>
-                    <div className="select simple">
-                      <select id="form-sort">
-                        <option>Name ascending</option>
-                        <option>Name desending</option>
-                        <option>Height ascending</option>
-                        <option>Height desending</option>
-                        <option>Weight ascending</option>
-                        <option>Weight desending</option>
-                      </select>
                     </div>
                   </div>
                   <div className="submit">
@@ -172,7 +174,7 @@ class AllPokemons extends React.Component {
               <div className="g12">
                 <h2>Found 10 Pokemons</h2>
               </div>
-              <div className="g12 nest cards">
+              <div className="g12 nest cards fw">
                 {
                   pokemons.results.map((pokemon,i) => ( 
                     <SinglePokemon apiurl = {pokemon.url} key = {i} />

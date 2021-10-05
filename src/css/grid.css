@@ -110,7 +110,9 @@
   .grid {
     padding: 90px 40px;
   }
-
+  .g3 {
+    width: 33.33333334%;
+  }
 }
 
 @media only screen and (max-width: 768px){
