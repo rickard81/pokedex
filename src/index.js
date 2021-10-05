@@ -2,6 +2,80 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+
+class SinglePokemon extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      pokemon: [],
+      DataisLoaded2: false
+    };
+  }
+
+  componentDidMount() {
+    const arr = this.props.apiurl.split('/'),
+          id = arr[arr.length - 2];
+
+    fetch("https://pokeapi.co/api/v2/pokemon/" + id).then((res) => res.json()).then((json) => {
+      this.setState({
+        pokemon: json,
+        DataisLoaded2: true
+      });
+    })
+  }
+  
+  render(){
+    const { DataisLoaded2, pokemon } = this.state;
+    if (!DataisLoaded2){
+      return (
+        <h1>Pleses wait some time...</h1>
+      );
+    }
+    else {
+
+      let abilitiesHtml = '',
+          i = 0;
+
+      while (i < pokemon.abilities.length){
+        abilitiesHtml += `<div class="tag">${pokemon.abilities[i]['ability']['name']}</div>`;
+        i++;
+      }
+      
+      const type = pokemon.types[0]['type']['name'];
+
+      return(
+        <div key = {this.props.i} className="g3">
+          <a href="#" className={'card ' + type}>
+            <div className="image">
+              <div className="circle"></div>
+              <img src={pokemon.sprites.other['official-artwork']['front_default']} alt={"Illutration of " + pokemon.name} />
+            </div>
+            <div className="meta">
+              <p className="tag filled mb0">#{pokemon.id}</p>
+              <p className="h4">{pokemon.name}</p>
+              <div className="g4 nest">
+                <p className="mb0 b">{type}</p>
+                <p>type</p>
+              </div>    
+              <div className="g4 nest">
+                <p className="mb0 b">{pokemon.weight} kg</p>
+                <p>weight</p>
+              </div>    
+              <div className="g4 nest">
+                <p className="mb0 b">{pokemon.height} m</p>
+                <p>height</p>
+              </div>
+              <div className = "tags" dangerouslySetInnerHTML={{ __html: abilitiesHtml }} />
+            </div>
+          </a>
+        </div>
+      );
+    }
+  }
+
+}
+
 class AllPokemons extends React.Component {
 
   constructor(props){
@@ -90,7 +164,7 @@ class AllPokemons extends React.Component {
               <div className="g12 nest cards">
                 {
                   pokemons.results.map((pokemon,i) => ( 
-                    console.log(pokemon.url)
+                    <SinglePokemon apiurl = {pokemon.url} key = {i} />
                   ))
                 }
               </div>
