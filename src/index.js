@@ -86,18 +86,29 @@ class AllPokemons extends React.Component {
     super(props);
     this.state = {
       pokemons: [],
-      DataisLoaded: false
+      DataisLoaded: false,
+      selectedOption: "10"
     };
   }
   
   componentDidMount() {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0").then((res) => res.json()).then((json) => {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=" + this.state.selectedOption + "&offset=0").then((res) => res.json()).then((json) => {
       this.setState({
         pokemons: json,
         DataisLoaded: true
       });
     })
   }
+
+  handleFormSubmit = e => {
+    console.log("You have submitted:", this.state.selectedOption);
+  };
+
+  handleOptionChange = e => {
+    this.setState({
+      selectedOption: e.target.value
+    });
+  };
 
   render() {
     
@@ -135,15 +146,15 @@ class AllPokemons extends React.Component {
                       <fieldset>
                         <legend>Pokemons per page:</legend>
                         <div className="radio">
-                          <input id="form-count10" type="radio" name="formPageCount" value="10" defaultChecked />
+                          <input id="form-count10" type="radio" name="formPageCount" value="10" checked={this.state.selectedOption === "10"} onChange={this.handleOptionChange} />
                           <label htmlFor="form-count10">10</label>
                         </div>
                         <div className="radio">
-                          <input id="form-count20" type="radio" name="formPageCount" value="20" />              
+                          <input id="form-count20" type="radio" name="formPageCount" value="20" checked={this.state.selectedOption === "20"} onChange={this.handleOptionChange} />              
                           <label htmlFor="form-count20">20</label>
                         </div>
                         <div className="radio">
-                          <input id="form-count50" type="radio" name="formPageCount" value="50" />
+                          <input id="form-count50" type="radio" name="formPageCount" value="50" checked={this.state.selectedOption === "50"} onChange={this.handleOptionChange} />
                           <label htmlFor="form-count50">50</label>
                         </div>
                       </fieldset>
@@ -163,7 +174,7 @@ class AllPokemons extends React.Component {
                     </div>
                   </div>
                   <div className="submit">
-                    <button class="btn">Search</button>
+                    <button className="btn" onClick={this.handleFormSubmit}>Search</button>
                   </div>
                 </div>
               </div>
