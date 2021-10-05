@@ -1,0 +1,127 @@
+/* ====================================================
+
+ @project: pokemons
+ @author: Rickard Andersson, rickard@pxlab.com
+ @content: helpers
+
+======================================================= */
+
+/****************************************
+  ==== LAYOUT
+****************************************/
+
+.w100 {
+  width: 100%;
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.inbl {
+  display: inline-block !important;
+}
+.rel {
+  position: relative;
+}
+.clear:after {
+  visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;
+}
+.clear {
+  display: inline-table; clear: both;
+}
+/* Hides from IE-mac \*/ * html .clear { height: 1%; } .clear { display: block; } /* End hide from IE-mac */
+
+.fw {
+  display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap;
+}
+.fc {
+  display: -webkit-box; display: -ms-flexbox; display: flex;
+}
+ .fce {
+  display: flex; align-items: center; justify-content: center;
+}
+
+/****************************************
+  ==== COLORS
+****************************************/
+
+.bg-db {
+  background: #1e222b; /* Dark blue - rgb(12,39,53) */
+}
+.c-db {
+  color: #1e222b;
+}
+.bg-go {
+  background: #dbcba9 !important; /* Gold - rgb(238,232,170) */
+}
+.c-go, a.c-go:hover, a.c-go:focus {
+  color: #dbcba9 !important;
+}
+.bg-wh {
+  background-color: #fff;    /* White - rgb(255,255,255) */
+}
+.c-wh, a.c-wh:hover {
+  color: #fff;
+}
+
+/****************************************
+  ==== MARGINS & PADDINGS
+****************************************/
+
+.m0a { margin-left: auto !important; margin-right: auto !important; }
+.mb0 { margin-bottom: 0 !important }
+.mb40 { margin-bottom: 40px !important }
+.mb80 { margin-bottom: 80px !important }
+
+.pb0 { padding-bottom: 0 !important }
+.pt0 { padding-top: 0 !important }
+
+.pl40 { padding-left: 40px !important }
+.pr40 { padding-right: 40px !important }
+
+/****************************************
+  ==== DISPLAY & VISIBILITY
+****************************************/
+
+.hide {
+  display: none !important;
+}
+.hidden {
+  visibility: hidden !important; opacity: 0 !important;
+}
+.oh {
+  overflow: hidden;
+}
+.vh {
+  width: 1px; height: 1px; margin: -1px; padding: 0; clip: rect(0 0 0 0); border: 0; overflow: hidden; position: absolute;
+}
+.vh.focusable:active, .vh.focusable:focus {
+  width: auto; height: auto; clip: auto; margin: 0; overflow: visible; position: static;
+}
+
+/****************************************
+  ==== OTHER
+****************************************/
+
+
+.shadow {
+  box-shadow: 5px 20px 40px 0 rgb(0 0 0 / 15%);
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+}
+/****************************************
+  ==== MEDIA QUERIES
+****************************************/
+
+@media only screen and (max-width: 767px){
+
+
+}

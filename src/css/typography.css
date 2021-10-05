@@ -1,0 +1,142 @@
+/* ====================================================
+
+ @project: pokemons
+ @author: Rickard Andersson, rickard@pxlab.com
+ @content: typography
+ 
+======================================================= */
+
+/****************************************
+  ==== FONTS
+****************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+/****************************************
+  ==== GLOBAL
+****************************************/
+
+body {
+  font: 62.5%/1.5 'Jost', sans-serif; font-weight: 400;
+}
+input, select, textarea, button {
+  font-family: 'Jost', sans-serif; font-weight: 400;
+}
+h1, h2, h3, .h3, h4, .h4, .gilroy {
+  font-family: 'Playfair Display', serif; font-weight: 400; line-height: 1;
+}
+
+/****************************************
+  ==== BASICS
+****************************************/
+
+body {
+  color: #0c2735; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+input[type="text"], input[type="tel"], input[type="email"], input[type="url"], input[type="number"], input[type="password"], input[type="search"], select, textarea, button {
+  font-size: 1.7em; color: #0c2735;
+}
+h1 {
+  font-size: 4.0em; margin: 0 0 40px 0;
+}
+h2, .h2 {
+  font-size: 5.0em; margin: 0 0 30px 0;
+}
+h3, .h3 {
+  font-size: 4.0em; margin: 0 0 20px 0;
+}
+h4, .h4 {
+  font-size: 2.0em; margin: 0 0 20px 0; color: #dbcba9;
+}
+p {
+  font-size: 1.677em; margin: 0 0 20px 0;
+}
+
+/****************************************
+  ==== LINKS
+****************************************/
+
+a {
+  color: #dbcba9; text-decoration: underline; cursor: pointer;
+}
+a:hover {
+  color: #dbcba9; text-decoration: none;
+}
+a:focus, a:active {
+  color: #dbcba9; text-decoration: none;
+}
+
+/****************************************
+  ==== LISTS
+****************************************/
+
+ul {
+  list-style-type: none; margin: 0 0 15px 0;
+}
+ul li {
+  padding: 0 0 5px 20px; position: relative; font-size: 1.7em;
+}
+ul li:before {
+  content: ""; width: 8px; height: 8px; position: absolute; top: 11px; left: 0; background: #3c485e; border-radius: 50%;
+}
+ul li p {
+  font-size: 1em;
+}
+ul li p.small {
+  font-size: 14px;
+}
+
+/****************************************
+  ==== HELPERS
+****************************************/
+
+b, strong {
+  font-weight: 700;
+}
+i, em {
+  font-style: italic;
+}
+
+.b {
+  font-weight: 700;
+}
+.txt-l {
+  text-align: left !important;
+}
+.txt-c {
+  text-align: center !important;
+}
+.txt-truncate {
+  text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
+.txt-tdn {
+  text-decoration: none;
+}
+.txt-tdn:hover {
+  text-decoration: none;
+}
+p.xl {
+  font-size: 2.925em; line-height: 1.45; max-width: 900px; margin: 0 auto 20px auto;
+}
+p.l {
+  font-size: 2.125em; line-height: 1.45; max-width: 900px; margin: 0 auto 20px auto;
+}
+p.s {
+  font-size: 1.525em; line-height: 1.15;
+}
+p.w {
+  text-transform: uppercase; letter-spacing: 5px;
+}
+
+
+@media only screen and (max-width: 767px){
+  
+p.l {
+  font-size: 1.677em; line-height: 1.45;
+}
+p.w {
+  text-transform: uppercase; letter-spacing: 4px;
+}
+
+}

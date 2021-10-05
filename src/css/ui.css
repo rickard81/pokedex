@@ -1,0 +1,64 @@
+/* ====================================================
+
+ @project: pokemons
+ @author: Rickard Andersson, rickard@pxlab.com
+ @content: ui
+
+======================================================= */
+
+/****************************************
+  ==== CARDS
+****************************************/
+
+.card {
+  width: 100%; display: block; background: #fff; border-radius: 10px; text-align: center; position: relative; z-index: 1; border: #fff 10px solid; color: #0c2735; text-decoration: none; transition: box-shadow .4s ease;
+}
+.card:hover {
+  z-index: 2;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+              0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+              0 12.5px 10px rgba(0, 0, 0, 0.06),
+              0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+              0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+              0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.card .image {
+  height: 125px; padding: 80px 0 0 0; position: relative;
+}
+.card img {
+  width: 200px; margin: 0 auto 40px auto; position: relative; z-index: 2;
+}
+.card .circle {
+  width: 70%; padding-bottom: 70%; position: absolute; top: 40px; left: 50%; z-index: 1; background: #e7e7e7; border-radius: 50%; opacity: 0.4; transform: translateX(-50%);
+}
+.card .meta {
+  padding: 180px 0 40px 0;
+}
+.card.fire .circle {
+  background: #edc6c6;
+}
+.card.grass .circle {
+  background: #c8edcc;
+}
+.card.normal .circle {
+  background: #c6e0ed;
+}
+.card.water .circle {
+  background: #c6eced;
+}
+.card.bug .circle {
+  background: #ddedc8;
+}
+.card.electric .circle {
+  background: #eeeec7;
+}
+.card.ground .circle {
+  background: #dec8ba;
+}
+.card.poison .circle {
+  background: #e9c7ee;
+}
+.card.fairy .circle {
+  background: #c9c7ee;
+}
+

@@ -1,0 +1,25 @@
+/* ====================================================
+
+ @project: pokemons
+ @author: Rickard Andersson, rickard@pxlab.com
+ @content: layout
+
+======================================================= */
+
+/****************************************
+  ==== MASTER LAYOUT
+****************************************/
+
+html, body {
+  height: 100%;
+}
+body {
+  text-align: center; background: #f1ecf0; -webkit-tap-highlight-color: rgba(0,0,0,0); overflow-y: scroll;
+}
+div.master-wrap {
+  width: 100%; margin: 0 auto; overflow: hidden;
+}
+main.main {
+  width: 100%; text-align: left; padding: 0 0 0 0; position: relative; z-index: 5;
+}
+

@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-
+import './css/reset.css';
+import './css/layout.css';
+import './css/grid.css';
+import './css/typography.css';
+import './css/forms.css';
+import './css/ui.css';
+import './css/helpers.css';
 
 class SinglePokemon extends React.Component {
 

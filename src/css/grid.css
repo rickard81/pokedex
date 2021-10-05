@@ -1,0 +1,161 @@
+/* ====================================================
+
+ @project: pokemons
+ @author: Rickard Andersson, rickard@pxlab.com
+ @content: grid
+
+======================================================= */
+
+/****************************************
+  ==== GRID
+****************************************/
+
+.grid {
+  width: 100%; max-width: 1740px; margin: 0 auto; padding: 40px 100px; text-align: left; position: relative; z-index: 5;
+}
+.grid:after {
+  visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;
+}
+
+/****************************************
+  ==== COLUMNS
+****************************************/
+
+.g1, .g2, .g1-5, .g3, .g4, .g5, .g6, .g7, .g8, .g9, .g10, .g11, .g12 {
+  padding: 20px; float: left;
+}
+.g1 { width: 8.33333333333% }
+.g2 { width: 16.6666666667% }
+.g1-5 { width: 20% }
+.g3 { width: 25% }
+.g4 { width: 33.3333333334% }
+.g5 { width: 41.6666666667% }
+.g6 { width: 50% }
+.g7 { width: 58.3333333333% }
+.g8 { width: 66.6666666667% }
+.g9 { width: 75% }
+.g10 { width: 83.333333333% }
+.g11 { width: 91.666666667% }
+.g12 { width: 100% }
+
+/****************************************
+  ==== CENTERING
+****************************************/
+
+.g3.fixed { width: 100%; max-width: 450px; }
+.g4.fixed { width: 100%; max-width: 600px; }
+.g5.fixed { width: 100%; max-width: 750px; }
+.g6.fixed { width: 100%; max-width: 900px; }
+.g7.fixed { width: 100%; max-width: 1050px; }
+.g8.fixed { width: 100%; max-width: 1200px; }
+.g9.fixed { width: 100%; max-width: 1350px; }
+
+.g1.fixed, .g2.fixed, .g3.fixed, .g4.fixed, .g5.fixed, .g6.fixed, .g7.fixed, .g8.fixed, .g9.fixed, .g10.fixed, .g11.fixed, .g12.fixed {
+  float: none;
+}
+.g1.fixed, .g2.fixed, .g3.fixed, .g4.fixed, .g5.fixed, .g6.center, .g7.fixed, .g8.fixed, .g9.fixed, .g10.fixed, .g11.fixed, .g12.fixed {
+  margin: 0 auto;
+}
+.g1.center, .g2.center, .g3.center, .g4.center, .g5.center, .g6.center, .g7.center, .g8.center, .g9.center, .g10.center, .g11.center, .g12.center {
+  margin: 0 auto; text-align: left;
+}
+.g1.center:after, .g2.center:after, .g3.center:after, .g4.center:after, .g5.center:after, .g6.center:after, .g7.center:after, .g8.center:after, .g9.center:after, .g10.center:after, .g11.center:after, .g12.center:after {
+  visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;
+}
+
+/****************************************
+  ==== NESTING
+****************************************/
+
+.nest {
+  padding: 0 !important;
+}
+.group.nest, .group .nest {
+  padding: 15px 20px !important;
+}
+.group.nest .nest {
+  padding: 0 !important;
+}
+
+/****************************************
+  ==== GROUPING
+****************************************/
+
+.group .g1, .group .g2, .group .g1-5, .group .g3, .group .g4, .group .g5, .group .g6, .group .g7, .group .g8, .group .g9, .group .g10, .group .g11, .group .g12 {
+  padding: 15px 20px;
+}
+
+/****************************************
+  ==== ELEMENT SPACING
+****************************************/
+
+.g1 *:last-child, .g2 *:last-child, .g3 *:last-child, .g4 *:last-child, .g5 *:last-child, .g6 *:last-child, .g7 *:last-child, .g8 *:last-child, .g9 *:last-child, .g10 *:last-child, .g11 *:last-child, .g12 *:last-child {
+  margin-bottom: 0;
+}
+
+/****************************************
+  ==== MEDIA QUERIES
+****************************************/
+
+@media only screen and (max-width: 1440px){
+
+  .grid {
+    padding: 90px 120px;
+  }
+
+}
+
+@media only screen and (max-width: 1280px){
+
+  .grid {
+    padding: 90px 40px;
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+  
+  .grid {
+    padding: 40px 20px;
+  }
+  .g1, .g2, .g1-5, .g3, .g4, .g5, .g6, .g7, .g8, .g9, .g10, .g11, .g12 {
+    padding: 15px 20px;
+  }
+  .group.nest, .group .nest {
+    padding: 0 !important;
+  }
+  .group .g1, .group .g2, .group .g1-5, .group .g3, .group .g4, .group .g5, .group .g6, .group .g7, .group .g8, .group .g9, .group .g10, .group .g11, .group .g12 {
+    padding: 15px 20px;
+  }
+  .g1-5 { width: 50%; }
+  .g3 { width: 100% }
+  .g4 { width: 100% }
+  .g5 { width: 100% }
+  .g6 { width: 100% }
+  .g7 { width: 100% }
+  .g8 { width: 100% }
+  .g9 { width: 100% }
+  .g10 { width: 100% }
+  .g11 { width: 100% }
+  .g12 { width: 100% }
+
+}
+
+@media only screen and (max-width: 480px){
+
+  .grid {
+    padding: 30px 15px;
+  }
+  .g1, .g2, .g1-5, .g3, .g4, .g5, .g6, .g7, .g8, .g9, .g10, .g11, .g12 {
+    padding: 20px 15px;
+  }
+  .group.nest, .group .nest {
+    padding: 0 !important;
+  }
+  .group .g1, .group .g2, .group .g1-5, .group .g3, .group .g4, .group .g5, .group .g6, .group .g7, .group .g8, .group .g9, .group .g10, .group .g11, .group .g12 {
+    padding: 10px 15px;
+  }
+  .g1-5 { width: 100%; }
+  .g2 { width: 50%; }
+
+}
