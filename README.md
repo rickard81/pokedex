@@ -1,3 +1,8 @@
+# TODO's
+
+- Implement search and filter functionality, time ran out :(
+- Unit testing. This is something that have been handled by others in the companies I have worked in before.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
