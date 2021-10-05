@@ -57,19 +57,18 @@ class SinglePokemon extends React.Component {
               <img src={pokemon.sprites.other['official-artwork']['front_default']} alt={"Illutration of " + pokemon.name} />
             </div>
             <div className="meta">
-              <p className="tag filled mb0">#{pokemon.id}</p>
               <p className="h4">{pokemon.name}</p>
-              <div className="g4 nest">
-                <p className="mb0 b">{type}</p>
-                <p>type</p>
+              <div className="g4 nest stat">
+                <p className="b">{type}</p>
+                <p className="s">type</p>
               </div>    
-              <div className="g4 nest">
-                <p className="mb0 b">{pokemon.weight} kg</p>
-                <p>weight</p>
+              <div className="g4 nest stat">
+                <p className="b">{pokemon.weight} kg</p>
+                <p className="s">weight</p>
               </div>    
-              <div className="g4 nest">
-                <p className="mb0 b">{pokemon.height} m</p>
-                <p>height</p>
+              <div className="g4 nest stat">
+                <p className="b">{pokemon.height} m</p>
+                <p className="s">height</p>
               </div>
               <div className = "tags" dangerouslySetInnerHTML={{ __html: abilitiesHtml }} />
             </div>
@@ -124,12 +123,14 @@ class AllPokemons extends React.Component {
                 </div>
                 <div className="g6">
                   <label htmlFor="form-ability">Ability</label>
-                  <select id="form-ability">
-                    <option>all</option>
-                  </select>
+                  <div className="select">
+                    <select id="form-ability">
+                      <option>all</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="g12">
-                  <div className="left">
+                  <div className="option count">
                     <fieldset>
                       <legend>Pokemons per page:</legend>
                       <div className="radio">
@@ -146,16 +147,21 @@ class AllPokemons extends React.Component {
                       </div>
                     </fieldset>
                   </div>
-                  <div className="left">
-                    <label htmlFor="form-sort">Sort by</label>
-                    <select id="form-sort">
-                      <option>Name ascending</option>
-                      <option>Name desending</option>
-                      <option>Height ascending</option>
-                      <option>Height desending</option>
-                      <option>Weight ascending</option>
-                      <option>Weight desending</option>
-                    </select>
+                  <div className="option order">
+                    <label htmlFor="form-sort">Sort by:</label>
+                    <div className="select simple">
+                      <select id="form-sort">
+                        <option>Name ascending</option>
+                        <option>Name desending</option>
+                        <option>Height ascending</option>
+                        <option>Height desending</option>
+                        <option>Weight ascending</option>
+                        <option>Weight desending</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="submit">
+                    <button class="btn">Search</button>
                   </div>
                 </div>
               </div>
